@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cainban - Command-line Kanban Board</title>
+    <meta name="description" content="A lightweight, fast command-line kanban board with Claude AI integration for seamless task management.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="nav">
+                <div class="logo">
+                    <h1>🎯 Cainban</h1>
+                </div>
+                <div class="nav-links">
+                    <a href="#features">Features</a>
+                    <a href="#install">Install</a>
+                    <a href="https://github.com/hmain/cainban" target="_blank" class="github-link">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        Command-line Kanban <br>
+                        <span class="gradient-text">That Actually Works</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        A fast, lightweight kanban board for your terminal with AI integration. 
+                        Manage tasks, track progress, and stay organized without leaving your command line.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#install" class="btn btn-primary">Get Started</a>
+                        <a href="https://github.com/hmain/cainban" target="_blank" class="btn btn-secondary">
+                            View on GitHub
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-demo">
+                    <div class="terminal">
+                        <div class="terminal-header">
+                            <div class="terminal-controls">
+                                <span class="control close"></span>
+                                <span class="control minimize"></span>
+                                <span class="control maximize"></span>
+                            </div>
+                            <span class="terminal-title">Terminal</span>
+                        </div>
+                        <div class="terminal-content">
+                            <div class="terminal-line">
+                                <span class="prompt">$</span> cainban add "Implement user authentication"
+                            </div>
+                            <div class="terminal-line output">
+                                Created task #1: Implement user authentication
+                            </div>
+                            <div class="terminal-line">
+                                <span class="prompt">$</span> cainban list
+                            </div>
+                            <div class="terminal-line output">
+                                📋 My Tasks<br>
+                                <br>
+                                📝 TODO<br>
+                                1. Implement user authentication<br>
+                                <br>
+                                🔄 DOING<br>
+                                (empty)<br>
+                                <br>
+                                ✅ DONE<br>
+                                (empty)
+                            </div>
+                            <div class="terminal-line">
+                                <span class="prompt cursor">$</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+                <h2 class="section-title">Why Developers Love Cainban</h2>
+                <div class="features-grid">
+                    <div class="feature">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Lightning Fast</h3>
+                        <p>Built in Go for speed. No waiting, no loading screens. Just instant task management.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🤖</div>
+                        <h3>Claude AI Integration</h3>
+                        <p>Natural language task management with Claude AI through MCP protocol.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🎯</div>
+                        <h3>Developer Focused</h3>
+                        <p>Priority levels, task linking, fuzzy search, and multi-board support.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🔗</div>
+                        <h3>Task Dependencies</h3>
+                        <p>Link tasks with blocks, depends_on, and related relationships.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🗂️</div>
+                        <h3>Multi-Board Support</h3>
+                        <p>Organize different projects with separate kanban boards.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🔍</div>
+                        <h3>Smart Search</h3>
+                        <p>Fuzzy search to find tasks quickly across all your boards.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="install" class="install">
+            <div class="container">
+                <div class="install-content">
+                    <h2 class="section-title">Get Started in Seconds</h2>
+                    <div class="install-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Clone & Build</h3>
+                                <div class="code-block">
+                                    <code>git clone https://github.com/hmain/cainban.git<br>
+cd cainban<br>
+go build -o cainban cmd/cainban/main.go</code>
+                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Initialize Your Board</h3>
+                                <div class="code-block">
+                                    <code>./cainban init</code>
+                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>Start Managing Tasks</h3>
+                                <div class="code-block">
+                                    <code>./cainban add "Build awesome features"<br>
+./cainban list<br>
+./cainban move 1 doing</code>
+                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Level Up Your Task Management?</h2>
+                    <p>Join developers who've already made the switch to command-line productivity.</p>
+                    <div class="cta-actions">
+                        <a href="https://github.com/hmain/cainban" target="_blank" class="btn btn-primary btn-large">
+                            Star on GitHub
+                        </a>
+                        <a href="https://github.com/hmain/cainban#claude-ai-integration" target="_blank" class="btn btn-secondary btn-large">
+                            Setup Claude AI
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p>&copy; 2024 Cainban. Open source project.</p>
+                </div>
+                <div class="footer-right">
+                    <a href="https://github.com/hmain/cainban" target="_blank">GitHub</a>
+                    <a href="https://github.com/hmain/cainban/issues" target="_blank">Issues</a>
+                    <a href="https://github.com/hmain/cainban#contributing" target="_blank">Contributing</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
