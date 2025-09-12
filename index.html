@@ -33,8 +33,8 @@
                         <span class="gradient-text">That Actually Works</span>
                     </h1>
                     <p class="hero-subtitle">
-                        A fast, lightweight kanban board for your terminal with AI integration. 
-                        Manage tasks, track progress, and stay organized without leaving your command line.
+                        A command-line kanban board where every feature is exposed as CLI options first. 
+                        Add interactive TUI mode for navigation, MCP server for AI code generators, and full viewport scrolling for massive task lists—all without leaving your terminal.
                     </p>
                 </div>
                 <div class="hero-demo">
@@ -49,25 +49,24 @@
                         </div>
                         <div class="terminal-content">
                             <div class="terminal-line">
-                                <span class="prompt">$</span> cainban add "Implement user authentication"
+                                <span class="prompt">$</span> cainban tui
                             </div>
                             <div class="terminal-line output">
-                                Created task #1: Implement user authentication
-                            </div>
-                            <div class="terminal-line">
-                                <span class="prompt">$</span> cainban list
-                            </div>
-                            <div class="terminal-line output">
-                                📋 My Tasks<br>
                                 <br>
-                                📝 TODO<br>
-                                1. Implement user authentication<br>
+                                Cainban - Development Board<br>
                                 <br>
-                                🔄 DOING<br>
-                                (empty)<br>
+                                ┌─ 📝 Todo (127) [5/127] ┐  ┌─ 🔄 Doing (23) [3/23] ┐  ┌─ ✅ Done (485) [12/485]┐<br>
+                                │                       │  │                       │  │                       │<br>
+                                │ ● Fix login bug       │  │ ●●● Auth refactor     │  │ ● Setup CI pipeline   │<br>
+                                │ ●● API optimization   │  │ ● Update docs         │  │ ● Code review fixes   │<br>
+                                │ → Database migration  │  │ → Performance tests   │  │ ● Dependency updates  │<br>
+                                │ ● UI improvements     │  │                       │  │ ● Security audit      │<br>
+                                │ ● Error handling      │  │                       │  │ ● Database migration  │<br>
+                                │                       │  │                       │  │                       │<br>
+                                │ ▼ (122 more below)    │  │ ▼ (20 more below)     │  │ ▼ (479 more below)    │<br>
+                                └───────────────────────┘  └───────────────────────┘  └───────────────────────┘<br>
                                 <br>
-                                ✅ DONE<br>
-                                (empty)
+                                h/l: columns • j/k: navigate • PgUp/PgDn: scroll • enter: move • q: quit
                             </div>
                             <div class="terminal-line">
                                 <span class="prompt cursor">$</span>
@@ -78,28 +77,78 @@
             </div>
         </section>
 
+        <section class="tui-features">
+            <div class="container">
+                <div class="tui-content">
+                    <h2 class="section-title">CLI-First with Interactive TUI Mode</h2>
+                    <p class="section-description">
+                        Every feature starts as a CLI command (create, list, move, link, delete). Add <code>cainban tui</code> for interactive 
+                        navigation of massive task lists with viewport scrolling and enhanced keyboard controls. All your CLI workflow, now with visual navigation.
+                    </p>
+                    
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <h3>🎯 Viewport Navigation</h3>
+                            <p>Handle massive task lists (635+ tasks tested) with smooth viewport scrolling and real-time position indicators [5/127]. Perfect for large projects.</p>
+                            <div class="feature-demo">
+                                <code>j/k: navigate • PgUp/PgDn: scroll • Home/End: jump</code>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <h3>📐 Responsive Layout</h3>
+                            <p>Dynamic column widths that adapt to your terminal size. Resize your window and watch the layout adjust in real-time</p>
+                            <div class="feature-demo">
+                                <code>Auto-adjusting columns • Smart text truncation</code>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <h3>⚡ Auto-Scroll</h3>
+                            <p>Navigate tasks with j/k keys and the viewport automatically follows your selection. No manual scrolling needed</p>
+                            <div class="feature-demo">
+                                <code>Select task 50/100? Viewport jumps there instantly</code>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <h3>🎮 CLI + Interactive</h3>
+                            <p>Use CLI commands for scripting and automation, TUI for interactive browsing. Every TUI action maps to a CLI command you can script.</p>
+                            <div class="feature-demo">
+                                <code>CLI: cainban create • TUI: n key → same result</code>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="version-badge">
+                        <strong>v0.2.1-dev.10</strong> - "Full Viewport Navigation"
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="mcp-integration">
             <div class="container">
                 <div class="mcp-content">
                     <div class="mcp-text">
-                        <h2 class="section-title">Built-in Claude AI Integration</h2>
+                        <h2 class="section-title">Built-in AI Code Generator Integration</h2>
                         <p class="mcp-description">
-                            Cainban includes a built-in MCP (Model Context Protocol) server that connects seamlessly with Claude AI. 
-                            Manage your tasks using natural language - no complex commands to remember.
+                            Cainban includes a built-in MCP (Model Context Protocol) server that connects seamlessly with AI code generators like Claude, ChatGPT, and other AI assistants. 
+                            Just run <code>cainban mcp</code> and configure your AI tool - no complex setup or additional servers required.
                         </p>
                         
                         <div class="mcp-features">
                             <div class="mcp-feature">
                                 <h3>🤖 Natural Language Commands</h3>
-                                <p>"Create a high priority task for user authentication" → Task created instantly</p>
+                                <p>"Create a high priority task for user authentication" → Executes CLI commands through your AI assistant</p>
                             </div>
                             <div class="mcp-feature">
                                 <h3>🔄 Real-time Sync</h3>
-                                <p>Changes made through Claude appear immediately in your terminal</p>
+                                <p>Changes made through AI assistants appear immediately in your terminal</p>
                             </div>
                             <div class="mcp-feature">
                                 <h3>📋 Smart Task Management</h3>
-                                <p>Link tasks, set priorities, and organize boards through conversation</p>
+                                <p>Link tasks, set priorities, and organize boards through conversation with any compatible AI</p>
                             </div>
                         </div>
                     </div>
@@ -107,21 +156,21 @@
                     <div class="mcp-demo">
                         <div class="chat-window">
                             <div class="chat-header">
-                                <span class="chat-title">Claude AI + Cainban</span>
+                                <span class="chat-title">AI Assistant + Cainban</span>
                             </div>
                             <div class="chat-content">
                                 <div class="message user">
                                     <strong>You:</strong> Create a task for implementing the login feature with high priority
                                 </div>
                                 <div class="message assistant">
-                                    <strong>Claude:</strong> Created task #3 [HIGH]: Implement login feature<br>
+                                    <strong>AI:</strong> Created task #3 [HIGH]: Implement login feature<br>
                                     <span class="task-details">Added to your "Development" board in TODO column</span>
                                 </div>
                                 <div class="message user">
                                     <strong>You:</strong> Link task 3 to block task 1
                                 </div>
                                 <div class="message assistant">
-                                    <strong>Claude:</strong> Linked task 3 blocks task 1<br>
+                                    <strong>AI:</strong> Linked task 3 blocks task 1<br>
                                     <span class="task-details">Task 1 is now blocked until task 3 is completed</span>
                                 </div>
                             </div>
@@ -134,7 +183,7 @@
         <section class="setup">
             <div class="container">
                 <div class="setup-content">
-                    <h2 class="section-title">Setup MCP Integration</h2>
+                    <h2 class="section-title">Setup AI Integration</h2>
                     <div class="setup-grid">
                         <div class="setup-step">
                             <h3>1. Start the MCP Server</h3>
@@ -146,21 +195,21 @@
                         </div>
                         
                         <div class="setup-step">
-                            <h3>2. Configure Claude</h3>
+                            <h3>2. Configure Your AI Assistant</h3>
                             <div class="code-block">
-                                <code>claude mcp add-json cainban '{"type":"stdio","command":"./cainban","args":["mcp"]}'</code>
+                                <code>ai-tool mcp add cainban '{"command":"./cainban","args":["mcp"]}'</code>
                                 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                             </div>
-                            <p>Connects Claude to your Cainban MCP server</p>
+                            <p>Connects your AI code generator to Cainban MCP server</p>
                         </div>
                         
                         <div class="setup-step">
-                            <h3>3. Start Chatting</h3>
+                            <h3>3. Start Managing Tasks</h3>
                             <div class="code-block">
                                 <code>"Add a task for user authentication with high priority"</code>
                                 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                             </div>
-                            <p>Use natural language to manage your tasks through Claude</p>
+                            <p>Use natural language to manage your tasks through any compatible AI</p>
                         </div>
                     </div>
                 </div>
@@ -176,8 +225,8 @@
                         <a href="https://github.com/hmain/cainban" target="_blank" class="btn btn-primary btn-large">
                             Star on GitHub
                         </a>
-                        <a href="https://github.com/hmain/cainban#claude-ai-integration" target="_blank" class="btn btn-secondary btn-large">
-                            Setup Claude AI
+                        <a href="https://github.com/hmain/cainban#ai-integration" target="_blank" class="btn btn-secondary btn-large">
+                            Setup AI Integration
                         </a>
                     </div>
                 </div>

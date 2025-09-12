@@ -1,11 +1,11 @@
-// Copy code functionality
+// Copy code functionality with fallback for HTTP sites
 function copyCode(button) {
     const codeBlock = button.parentElement;
     const code = codeBlock.querySelector('code');
     const text = code.textContent;
+    const originalText = button.textContent;
     
-    navigator.clipboard.writeText(text).then(() => {
-        const originalText = button.textContent;
+    function showSuccess() {
         button.textContent = 'Copied!';
         button.style.backgroundColor = 'rgba(34, 197, 94, 0.2)';
         
@@ -13,13 +13,45 @@ function copyCode(button) {
             button.textContent = originalText;
             button.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
         }, 2000);
-    }).catch(err => {
-        console.error('Failed to copy text: ', err);
+    }
+    
+    function showError() {
         button.textContent = 'Failed';
         setTimeout(() => {
-            button.textContent = 'Copy';
+            button.textContent = originalText;
         }, 2000);
-    });
+    }
+    
+    // Try modern clipboard API first (requires HTTPS)
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(showSuccess).catch(() => {
+            // Fallback to older method
+            copyTextFallback(text) ? showSuccess() : showError();
+        });
+    } else {
+        // Use fallback method directly
+        copyTextFallback(text) ? showSuccess() : showError();
+    }
+}
+
+// Fallback copy method for HTTP sites
+function copyTextFallback(text) {
+    try {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.style.position = 'fixed';
+        textarea.style.left = '-9999px';
+        textarea.style.top = '-9999px';
+        document.body.appendChild(textarea);
+        textarea.focus();
+        textarea.select();
+        const successful = document.execCommand('copy');
+        document.body.removeChild(textarea);
+        return successful;
+    } catch (err) {
+        console.error('Fallback copy failed: ', err);
+        return false;
+    }
 }
 
 // Smooth scrolling for anchor links
