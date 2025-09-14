@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cainban - Command-line Kanban Board</title>
-    <meta name="description" content="A lightweight, fast command-line kanban board with Claude AI integration for seamless task management.">
+    <title>Cainban - AI Codegen Workflow Management</title>
+    <meta name="description" content="A lightweight, fast command-line kanban board with AI codegen workflow integration for seamless project management in AI-assisted development.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -29,14 +29,13 @@
             <div class="container">
                 <div class="hero-content">
                     <h1 class="hero-title">
-                        Command-line Kanban <br>
-                        <span class="gradient-text">That Actually Works</span>
+                        AI Codegen Workflow <br>
+                        <span class="gradient-text">Task Management</span>
                     </h1>
                     <p class="hero-subtitle">
-                        A command-line kanban board where every feature is exposed as CLI options first.
-                        The enhanced TUI features professional visual indicators, focused column highlighting with status-based colors, intuitive arrow navigation,
-                        bright task selection highlighting, and comprehensive viewport scrolling for massive task lists.
-                        Add MCP server integration for seamless AI code generator workflows—all with exceptional visual clarity and accessibility.
+                        Transform your AI-assisted development workflow with intelligent task management. Cainban seamlessly integrates with AI codegen applications through MCP protocol,
+                        automatically organizing AI-generated features, tracking implementation progress, and managing dependencies. From initial AI conversations to deployed code,
+                        maintain complete visibility over your AI-enhanced development process with professional project organization that scales with your team.
                     </p>
                 </div>
                 <div class="hero-demo">
@@ -51,24 +50,30 @@
                         </div>
                         <div class="terminal-content">
                             <div class="terminal-line">
-                                <span class="prompt">$</span> cainban tui
+                                <span class="prompt">$</span> # AI Assistant creates tasks automatically
                             </div>
                             <div class="terminal-line output">
                                 <br>
-                                Cainban - Development Board<br>
+                                AI Codegen Workflow - Active Development<br>
                                 <br>
-                                ┌─ 📝 ▶ Todo (127) [5/127] ┐  ┌─ 🔄 Doing (23) [3/23] ─┐  ┌─ ✅ Done (485) [12/485]┐<br>
-                                ┃                       ┃  │                       │  │                       │<br>
-                                ┃ ❯ ●● Fix login bug    ┃  │ ●●● Auth refactor     │  │ ● Setup CI pipeline   │<br>
-                                ┃   ●● API optimization ┃  │ ● Update docs         │  │ ● Code review fixes   │<br>
-                                ┃   ● Database migration┃  │ → Performance tests   │  │ ● Dependency updates  │<br>
-                                ┃   ● UI improvements   ┃  │                       │  │ ● Security audit      │<br>
-                                ┃   ● Error handling    ┃  │                       │  │ ● Database migration  │<br>
-                                ┃                       ┃  │                       │  │                       │<br>
-                                ┃ ▼ (122 more below)    ┃  │ ▼ (20 more below)     │  │ ▼ (479 more below)    │<br>
-                                └───────────────────────┘  └───────────────────────┘  └───────────────────────┘<br>
+                                ┌─ 🤖 AI Generated (8) ──────┐  ┌─ 🔄 In Development (12) ──┐  ┌─ ✅ Deployed (47) ────────┐<br>
+                                ┃                            ┃  │                          │  │                          │<br>
+                                ┃ ●●● User auth system      ┃  │ ●●● Payment integration  │  │ ● Login validation       │<br>
+                                ┃ ●● Database schema design ┃  │ ●● API rate limiting     │  │ ● Error handling         │<br>
+                                ┃ ●● Email notification     ┃  │ ●● Frontend components   │  │ ● Unit test coverage     │<br>
+                                ┃ ● Search functionality    ┃  │ ● Code documentation     │  │ ● CI/CD pipeline         │<br>
+                                ┃ → File upload handler     ┃  │ → Performance optimize   │  │ ● Security audit         │<br>
+                                ┃                            ┃  │                          │  │                          │<br>
+                                ┃ [AI] Auto-linked tasks     ┃  │ [MCP] Synced progress    │  │ [AUTO] Metrics tracked   │<br>
+                                └────────────────────────────┘  └──────────────────────────┘  └──────────────────────────┘<br>
                                 <br>
-                                Status: Todo Column Active • h/l: columns • j/k: navigate • PgUp/PgDn: scroll • enter: move • q: quit
+                                MCP Active • AI Assistant Connected • Real-time Task Sync • Dependencies Auto-Tracked
+                            </div>
+                            <div class="terminal-line">
+                                <span class="prompt">$</span> cainban list --ai-generated
+                            </div>
+                            <div class="terminal-line output">
+                                Found 8 AI-generated tasks with automatic priority assignment and dependency linking
                             </div>
                             <div class="terminal-line">
                                 <span class="prompt cursor">$</span>
@@ -82,60 +87,59 @@
         <section class="tui-features">
             <div class="container">
                 <div class="tui-content">
-                    <h2 class="section-title">CLI-First with Enhanced Visual TUI Mode</h2>
+                    <h2 class="section-title">AI Codegen Workflow Integration</h2>
                     <p class="section-description">
-                        Every feature starts as a CLI command (create, list, move, link, delete). Add <code>cainban tui</code> for interactive
-                        navigation with professional visual indicators, status-based column highlighting, intuitive focus states, and enhanced
-                        accessibility features. Experience massive task lists with viewport scrolling and crystal-clear visual hierarchy.
-                        All your CLI workflow, now with exceptional visual clarity and professional interface design.
+                        Transform how you manage AI-assisted development projects. Cainban automatically captures AI-generated tasks, tracks implementation progress,
+                        and maintains dependency relationships across your entire development workflow. From initial AI conversations to production deployment,
+                        every step is organized, trackable, and optimized for team collaboration in AI-enhanced development environments.
                     </p>
                     
                     <div class="feature-grid">
                         <div class="feature-card">
-                            <h3>🎯 Enhanced Visual Focus</h3>
-                            <p>Professional focus indicators with status-based colors, thick borders, and background highlights for active columns. Arrow indicators (▶ ◀) in column titles and bright yellow task highlighting (❯) ensure you always know where you are.</p>
+                            <h3>🤖 AI Task Generation</h3>
+                            <p>AI assistants automatically create, prioritize, and organize tasks through natural language conversations. Tasks are intelligently categorized with context from your development discussions and linked to relevant code components.</p>
                             <div class="feature-demo">
-                                <code>▶ Todo Column Active • ❯ Selected Task • Status Bar Updates</code>
+                                <code>"Add user authentication" → Task #47 [HIGH] Auto-created with dependencies</code>
                             </div>
                         </div>
 
                         <div class="feature-card">
-                            <h3>🎨 Professional Visual Hierarchy</h3>
-                            <p>Clean, accessible design with enhanced visual indicators that integrate seamlessly with priority systems. Column focus states use different border styles and background highlighting for immediate visual feedback.</p>
+                            <h3>🔄 Real-Time Workflow Sync</h3>
+                            <p>MCP protocol integration ensures seamless communication between AI assistants and your project board. Task updates, status changes, and dependency modifications sync instantly across all connected development tools.</p>
                             <div class="feature-demo">
-                                <code>Thick borders • Background highlights • Priority integration</code>
+                                <code>AI moves task to "Doing" → Terminal shows update immediately</code>
                             </div>
                         </div>
 
                         <div class="feature-card">
-                            <h3>🎯 Comprehensive Navigation</h3>
-                            <p>Handle massive task lists (635+ tasks tested) with smooth viewport scrolling, real-time position indicators [5/127], and intelligent auto-scroll that follows your selection. Status bar shows current focus state.</p>
+                            <h3>🔗 Intelligent Dependency Tracking</h3>
+                            <p>AI assistants understand project architecture and automatically create task dependencies. When discussing features that depend on others, relationships are established without manual intervention, maintaining project coherence.</p>
                             <div class="feature-demo">
-                                <code>h/l: column focus • j/k: task navigation • PgUp/PgDn: viewport scroll</code>
+                                <code>"Payment system needs auth" → Auto-links tasks with blocking relationships</code>
                             </div>
                         </div>
 
                         <div class="feature-card">
-                            <h3>⚡ Smart Auto-Scroll</h3>
-                            <p>Navigate tasks with j/k keys and the viewport automatically follows your selection with smooth transitions. No manual scrolling needed - the interface adapts to your navigation patterns.</p>
+                            <h3>📊 Development Progress Analytics</h3>
+                            <p>Track AI-generated features from conception to deployment with automatic metrics collection. Monitor development velocity, identify bottlenecks, and optimize your AI-assisted workflow with comprehensive insights.</p>
                             <div class="feature-demo">
-                                <code>Select task 50/100? Viewport jumps there instantly with visual feedback</code>
+                                <code>AI feature completion rate: 87% • Average cycle time: 2.3 days</code>
                             </div>
                         </div>
 
                         <div class="feature-card">
-                            <h3>🔄 Accessibility First</h3>
-                            <p>Enhanced focus indicators designed for accessibility with high contrast ratios, clear visual boundaries, and consistent interaction patterns. Screen reader friendly with comprehensive keyboard navigation.</p>
+                            <h3>🚀 Seamless Team Collaboration</h3>
+                            <p>Share AI-generated project structures with team members instantly. Each developer can connect their AI assistant to the same board, creating a unified development workflow that scales with distributed teams.</p>
                             <div class="feature-demo">
-                                <code>High contrast • Clear boundaries • Keyboard optimized</code>
+                                <code>Team board sync • Multi-AI assistant support • Shared context</code>
                             </div>
                         </div>
 
                         <div class="feature-card">
-                            <h3>🎮 CLI + Interactive Perfect</h3>
-                            <p>Use CLI commands for scripting and automation, enhanced TUI for interactive browsing with professional visual feedback. Every TUI action maps to a CLI command you can script, now with exceptional visual clarity.</p>
+                            <h3>⚡ Cross-Platform AI Integration</h3>
+                            <p>Compatible with any AI assistant supporting MCP protocol including Claude Code, ChatGPT with plugins, and custom AI solutions. One unified interface for all your AI development tools and workflows.</p>
                             <div class="feature-demo">
-                                <code>CLI: cainban create • TUI: n key → same result, better visuals</code>
+                                <code>Claude Code + GPT-4 + Custom AI → All connected to same board</code>
                             </div>
                         </div>
                     </div>
@@ -147,24 +151,25 @@
             <div class="container">
                 <div class="mcp-content">
                     <div class="mcp-text">
-                        <h2 class="section-title">Built-in AI Code Generator Integration</h2>
+                        <h2 class="section-title">Enterprise-Grade AI Development Workflow</h2>
                         <p class="mcp-description">
-                            Cainban includes a built-in MCP (Model Context Protocol) server that connects seamlessly with AI code generators like Claude, ChatGPT, and other AI assistants. 
-                            Just run <code>cainban mcp</code> and configure your AI tool - no complex setup or additional servers required.
+                            Transform your development process with intelligent project management that understands AI-generated code. Cainban's MCP server integration
+                            creates a unified workflow where AI assistants become project management partners, automatically organizing development tasks,
+                            tracking feature implementation, and maintaining project coherence across complex codebases.
                         </p>
                         
                         <div class="mcp-features">
                             <div class="mcp-feature">
-                                <h3>🤖 Natural Language Commands</h3>
-                                <p>"Create a high priority task for user authentication" → Executes CLI commands through your AI assistant</p>
+                                <h3>🤖 Natural Language Project Management</h3>
+                                <p>"Break down the payment system into backend API, frontend integration, and testing tasks with proper dependencies" → AI creates structured task hierarchy automatically</p>
                             </div>
                             <div class="mcp-feature">
-                                <h3>🔄 Real-time Sync</h3>
-                                <p>Changes made through AI assistants appear immediately in your terminal</p>
+                                <h3>🔄 Intelligent Code-Task Alignment</h3>
+                                <p>AI assistants track which code changes correspond to which tasks, automatically updating progress as development proceeds and maintaining traceability</p>
                             </div>
                             <div class="mcp-feature">
-                                <h3>📋 Smart Task Management</h3>
-                                <p>Link tasks, set priorities, and organize boards through conversation with any compatible AI</p>
+                                <h3>📋 Context-Aware Development Planning</h3>
+                                <p>AI understands your project architecture and creates development plans that respect dependencies, resource constraints, and team capacity for optimal workflow efficiency</p>
                             </div>
                         </div>
                     </div>
@@ -176,18 +181,28 @@
                             </div>
                             <div class="chat-content">
                                 <div class="message user">
-                                    <strong>You:</strong> Create a task for implementing the login feature with high priority
+                                    <strong>You:</strong> I need to build a complete e-commerce checkout system with payment processing, inventory management, and order tracking
                                 </div>
                                 <div class="message assistant">
-                                    <strong>AI:</strong> Created task #3 [HIGH]: Implement login feature<br>
-                                    <span class="task-details">Added to your "Development" board in TODO column</span>
+                                    <strong>AI:</strong> Created comprehensive task structure:<br>
+                                    <span class="task-details">
+                                    • Task #12 [CRITICAL]: Payment gateway integration (blocks checkout)<br>
+                                    • Task #13 [HIGH]: Inventory validation service (blocks payment)<br>
+                                    • Task #14 [MEDIUM]: Order tracking API (depends on payment)<br>
+                                    • Task #15 [LOW]: Email notifications (depends on tracking)<br>
+                                    Auto-linked dependencies and assigned to "E-commerce Sprint" board
+                                    </span>
                                 </div>
                                 <div class="message user">
-                                    <strong>You:</strong> Link task 3 to block task 1
+                                    <strong>You:</strong> I just implemented the payment gateway. Update progress and show what's next
                                 </div>
                                 <div class="message assistant">
-                                    <strong>AI:</strong> Linked task 3 blocks task 1<br>
-                                    <span class="task-details">Task 1 is now blocked until task 3 is completed</span>
+                                    <strong>AI:</strong> Updated task #12 to DONE. Unlocked dependent tasks:<br>
+                                    <span class="task-details">
+                                    → Task #14 (Order tracking) moved to available in TODO<br>
+                                    → Task #13 (Inventory validation) remains priority for checkout completion<br>
+                                    Next recommended: Complete inventory service to enable end-to-end testing
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -199,7 +214,7 @@
         <section class="setup">
             <div class="container">
                 <div class="setup-content">
-                    <h2 class="section-title">Setup AI Integration</h2>
+                    <h2 class="section-title">Setup AI Codegen Workflow</h2>
                     <div class="setup-grid">
                         <div class="setup-step">
                             <h3>1. Start the MCP Server</h3>
@@ -211,21 +226,21 @@
                         </div>
                         
                         <div class="setup-step">
-                            <h3>2. Configure Your AI Assistant</h3>
+                            <h3>2. Connect Your AI Development Tools</h3>
                             <div class="code-block">
                                 <code>ai-tool mcp add cainban '{"command":"./cainban","args":["mcp"]}'</code>
                                 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                             </div>
-                            <p>Connects your AI code generator to Cainban MCP server</p>
+                            <p>Links all AI assistants to unified project management workflow</p>
                         </div>
                         
                         <div class="setup-step">
-                            <h3>3. Start Managing Tasks</h3>
+                            <h3>3. Begin AI-Enhanced Development</h3>
                             <div class="code-block">
                                 <code>"Add a task for user authentication with high priority"</code>
                                 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                             </div>
-                            <p>Use natural language to manage your tasks through any compatible AI</p>
+                            <p>Transform development conversations into structured, trackable project workflows</p>
                         </div>
                     </div>
                 </div>
@@ -235,14 +250,14 @@
         <section class="cta">
             <div class="container">
                 <div class="cta-content">
-                    <h2>Ready to Level Up Your Task Management?</h2>
-                    <p>Join developers who've already made the switch to command-line productivity.</p>
+                    <h2>Ready to Transform Your AI Development Workflow?</h2>
+                    <p>Join development teams already using AI-enhanced project management for faster, more organized development cycles.</p>
                     <div class="cta-actions">
                         <a href="https://github.com/hmain/cainban" target="_blank" class="btn btn-primary btn-large">
                             Star on GitHub
                         </a>
                         <a href="https://github.com/hmain/cainban#ai-integration" target="_blank" class="btn btn-secondary btn-large">
-                            Setup AI Integration
+                            Setup AI Workflow
                         </a>
                     </div>
                 </div>
