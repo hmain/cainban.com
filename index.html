@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cainban - AI Codegen Workflow Management</title>
-    <meta name="description" content="A lightweight, fast command-line kanban board with AI codegen workflow integration for seamless project management in AI-assisted development.">
+    <title>Cainban - CLI Kanban for Devs</title>
+    <meta name="description" content="Command-line kanban board with AI integration. Manage tasks through CLI, TUI, or let AI assistants handle it via MCP.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -29,13 +29,11 @@
             <div class="container">
                 <div class="hero-content">
                     <h1 class="hero-title">
-                        AI Codegen Workflow <br>
-                        <span class="gradient-text">Task Management</span>
+                        CLI Kanban <br>
+                        <span class="gradient-text">for Developers</span>
                     </h1>
                     <p class="hero-subtitle">
-                        Transform your AI-assisted development workflow with intelligent task management. Cainban seamlessly integrates with AI codegen applications through MCP protocol,
-                        automatically organizing AI-generated features, tracking implementation progress, and managing dependencies. From initial AI conversations to deployed code,
-                        maintain complete visibility over your AI-enhanced development process with professional project organization that scales with your team.
+                        Command-line kanban board that works how you work. Use CLI commands, interactive TUI, or let AI assistants manage your tasks via MCP protocol.
                     </p>
                 </div>
                 <div class="hero-demo">
@@ -50,50 +48,25 @@
                         </div>
                         <div class="terminal-content">
                             <div class="terminal-line">
-                                <span class="prompt">$</span> # AI Assistant creates tasks automatically
+                                <span class="prompt">$</span> cainban add "Fix auth bug" --priority high
                             </div>
                             <div class="terminal-line output">
-                                <br>
-                                <strong>USER:</strong> "Create tasks and subtasks for building a user authentication system"<br>
-                                <br>
-                                <strong>MCP SERVER:</strong><br>
-                                ✅ Created task #45 [high] - User Authentication System<br>
-                                ✅ Created subtask #46 [critical] - Login/Register UI Components<br>
-                                ✅ Created subtask #47 [high] - JWT Token Management<br>
-                                ✅ Created subtask #48 [medium] - Password Reset Flow<br>
-                                ✅ Linked dependencies: #46 blocks #47, #47 blocks #48<br>
-                                <br>
-                                🎯 <strong>RECOMMENDATION:</strong> Start with task #46 (Login/Register UI Components)<br>
-                                <br>
+                                ✅ Created task #12 [high] - Fix auth bug
                             </div>
                             <div class="terminal-line">
-                                <span class="prompt">$</span> # User continues development conversation
+                                <span class="prompt">$</span> cainban move "auth bug" doing
                             </div>
                             <div class="terminal-line output">
-                                <strong>USER:</strong> "Add CI/CD pipeline with testing stages"<br>
-                                <br>
-                                <strong>MCP SERVER:</strong><br>
-                                ✅ Created task #52 [critical] - CI/CD Pipeline Implementation<br>
-                                ✅ Created subtask #53 [high] - GitHub Actions Workflow Setup<br>
-                                ✅ Created subtask #54 [medium] - Automated Test Integration<br>
-                                ✅ Linked dependencies: #53 blocks #54<br>
-                                <br>
-                                🎯 <strong>RECOMMENDATION:</strong> Begin with #53 to establish pipeline foundation
+                                ✅ Moved task #12 to doing
                             </div>
                             <div class="terminal-line">
-                                <span class="prompt">$</span> # AI automatically organizes and prioritizes
+                                <span class="prompt">$</span> # Or let AI handle it via MCP
                             </div>
                             <div class="terminal-line output">
-                                <strong>USER:</strong> "Build real-time chat with file sharing"<br>
-                                <br>
-                                <strong>MCP SERVER:</strong><br>
-                                ✅ Created task #61 [high] - Real-time Chat System<br>
-                                ✅ Created subtask #62 [critical] - WebSocket Connection Handler<br>
-                                ✅ Created subtask #63 [medium] - File Upload Service<br>
-                                ✅ Created subtask #64 [low] - Chat UI Components<br>
-                                ✅ Auto-linked: #62 blocks #64, #63 depends on #62<br>
-                                <br>
-                                🎯 <strong>RECOMMENDATION:</strong> Start with #62 (WebSocket core infrastructure)
+                                <strong>AI:</strong> "Create tasks for user auth system"<br>
+                                ✅ Created task #13 [critical] - Login/Register UI<br>
+                                ✅ Created task #14 [high] - JWT Token Management<br>
+                                ✅ Linked dependencies automatically
                             </div>
                             <div class="terminal-line">
                                 <span class="prompt cursor">$</span>
@@ -107,145 +80,30 @@
         <section class="tui-features">
             <div class="container">
                 <div class="tui-content">
-                    <h2 class="section-title">AI Codegen Workflow Integration</h2>
-                    <p class="section-description">
-                        Transform how you manage AI-assisted development projects. Cainban automatically captures AI-generated tasks, tracks implementation progress,
-                        and maintains dependency relationships across your entire development workflow. From initial AI conversations to production deployment,
-                        every step is organized, trackable, and optimized for team collaboration in AI-enhanced development environments.
-                    </p>
+                    <h2 class="section-title">Three Ways to Work</h2>
                     
                     <div class="feature-grid">
                         <div class="feature-card">
-                            <h3>🤖 AI Task Generation</h3>
-                            <p>AI assistants automatically create, prioritize, and organize tasks through natural language conversations. Tasks are intelligently categorized with context from your development discussions and linked to relevant code components.</p>
+                            <h3>⚡ CLI Commands</h3>
+                            <p>Fast task management from your terminal. Add, move, prioritize, and link tasks with simple commands.</p>
                             <div class="feature-demo">
-                                <code>"Add user authentication" → Task #47 [HIGH] Auto-created with dependencies</code>
+                                <code>cainban add "Deploy to prod" --priority critical</code>
                             </div>
                         </div>
 
                         <div class="feature-card">
-                            <h3>🔄 Real-Time Workflow Sync</h3>
-                            <p>MCP protocol integration ensures seamless communication between AI assistants and your project board. Task updates, status changes, and dependency modifications sync instantly across all connected development tools.</p>
+                            <h3>🖥️ Interactive TUI</h3>
+                            <p>Full-screen terminal interface with smooth scrolling. Perfect for reviewing large task lists.</p>
                             <div class="feature-demo">
-                                <code>AI moves task to "Doing" → Terminal shows update immediately</code>
+                                <code>cainban tui  # Launch interactive mode</code>
                             </div>
                         </div>
 
                         <div class="feature-card">
-                            <h3>🔗 Intelligent Dependency Tracking</h3>
-                            <p>AI assistants understand project architecture and automatically create task dependencies. When discussing features that depend on others, relationships are established without manual intervention, maintaining project coherence.</p>
+                            <h3>🤖 AI Integration</h3>
+                            <p>Let AI assistants manage your board via MCP protocol. Works with Amazon Q CLI, Claude Desktop, and more.</p>
                             <div class="feature-demo">
-                                <code>"Payment system needs auth" → Auto-links tasks with blocking relationships</code>
-                            </div>
-                        </div>
-
-                        <div class="feature-card">
-                            <h3>📊 Development Progress Analytics</h3>
-                            <p>Track AI-generated features from conception to deployment with automatic metrics collection. Monitor development velocity, identify bottlenecks, and optimize your AI-assisted workflow with comprehensive insights.</p>
-                            <div class="feature-demo">
-                                <code>AI feature completion rate: 87% • Average cycle time: 2.3 days</code>
-                            </div>
-                        </div>
-
-                        <div class="feature-card">
-                            <h3>🚀 Seamless Team Collaboration</h3>
-                            <p>Share AI-generated project structures with team members instantly. Each developer can connect their AI assistant to the same board, creating a unified development workflow that scales with distributed teams.</p>
-                            <div class="feature-demo">
-                                <code>Team board sync • Multi-AI assistant support • Shared context</code>
-                            </div>
-                        </div>
-
-                        <div class="feature-card">
-                            <h3>⚡ Cross-Platform AI Integration</h3>
-                            <p>Compatible with any AI assistant supporting MCP protocol including Claude Code, ChatGPT with plugins, and custom AI solutions. One unified interface for all your AI development tools and workflows.</p>
-                            <div class="feature-demo">
-                                <code>Claude Code + GPT-4 + Custom AI → All connected to same board</code>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="mcp-integration">
-            <div class="container">
-                <div class="mcp-content">
-                    <div class="mcp-text">
-                        <h2 class="section-title">Enterprise-Grade AI Development Workflow</h2>
-                        <p class="mcp-description">
-                            Transform your development process with intelligent project management that understands AI-generated code. Cainban's MCP server integration
-                            creates a unified workflow where AI assistants become project management partners, automatically organizing development tasks,
-                            tracking feature implementation, and maintaining project coherence across complex codebases.
-                        </p>
-                        
-                        <div class="mcp-features">
-                            <div class="mcp-feature">
-                                <h3>🤖 Natural Language Project Management</h3>
-                                <p>"Break down the payment system into backend API, frontend integration, and testing tasks with proper dependencies" → AI creates structured task hierarchy automatically</p>
-                            </div>
-                            <div class="mcp-feature">
-                                <h3>🔄 Intelligent Code-Task Alignment</h3>
-                                <p>AI assistants track which code changes correspond to which tasks, automatically updating progress as development proceeds and maintaining traceability</p>
-                            </div>
-                            <div class="mcp-feature">
-                                <h3>📋 Context-Aware Development Planning</h3>
-                                <p>AI understands your project architecture and creates development plans that respect dependencies, resource constraints, and team capacity for optimal workflow efficiency</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="mcp-demo">
-                        <div class="chat-window">
-                            <div class="chat-header">
-                                <span class="chat-title">AI Assistant + Cainban</span>
-                            </div>
-                            <div class="chat-content">
-                                <div class="message user">
-                                    <strong>USER:</strong> Create tasks and subtasks for building a user authentication system
-                                </div>
-                                <div class="message assistant">
-                                    <strong>MCP SERVER RESPONSE:</strong><br>
-                                    <span class="task-details">
-                                    ✅ Created task #45 [high] - User Authentication System<br>
-                                    ✅ Created subtask #46 [critical] - Login/Register UI Components<br>
-                                    ✅ Created subtask #47 [high] - JWT Token Management<br>
-                                    ✅ Created subtask #48 [medium] - Password Reset Flow<br>
-                                    ✅ Linked dependencies: #46 blocks #47, #47 blocks #48<br>
-                                    ✅ Set priorities based on complexity and dependencies<br><br>
-                                    🎯 <strong>RECOMMENDATION:</strong> Start with task #46 (Login/Register UI Components) - it's the foundation for the auth system.
-                                    </span>
-                                </div>
-                                <div class="message user">
-                                    <strong>USER:</strong> Set up CI/CD pipeline with testing and deployment stages
-                                </div>
-                                <div class="message assistant">
-                                    <strong>MCP SERVER RESPONSE:</strong><br>
-                                    <span class="task-details">
-                                    ✅ Created task #52 [critical] - CI/CD Pipeline Implementation<br>
-                                    ✅ Created subtask #53 [high] - GitHub Actions Workflow Setup<br>
-                                    ✅ Created subtask #54 [high] - Automated Test Suite Integration<br>
-                                    ✅ Created subtask #55 [medium] - Production Deployment Pipeline<br>
-                                    ✅ Created subtask #56 [low] - Staging Environment Config<br>
-                                    ✅ Linked dependencies: #53 blocks #54, #54 blocks #55, #55 blocks #56<br><br>
-                                    🎯 <strong>RECOMMENDATION:</strong> Begin with #53 (GitHub Actions setup) to establish the foundation before adding test automation.
-                                    </span>
-                                </div>
-                                <div class="message user">
-                                    <strong>USER:</strong> Build a real-time chat feature with message history and file sharing
-                                </div>
-                                <div class="message assistant">
-                                    <strong>MCP SERVER RESPONSE:</strong><br>
-                                    <span class="task-details">
-                                    ✅ Created task #61 [high] - Real-time Chat System<br>
-                                    ✅ Created subtask #62 [critical] - WebSocket Connection Handler<br>
-                                    ✅ Created subtask #63 [high] - Message Storage & Retrieval API<br>
-                                    ✅ Created subtask #64 [medium] - File Upload & Sharing Service<br>
-                                    ✅ Created subtask #65 [medium] - Chat UI Components<br>
-                                    ✅ Created subtask #66 [low] - Message Encryption & Security<br>
-                                    ✅ Linked dependencies: #62 blocks #63, #63 blocks #65, #64 depends on #63<br><br>
-                                    🎯 <strong>RECOMMENDATION:</strong> Start with #62 (WebSocket handler) as the core communication layer that everything else depends on.
-                                    </span>
-                                </div>
+                                <code>~/.aws/amazonq/mcp.json: {"cainban": {"command": "cainban", "args": ["mcp"]}}</code>
                             </div>
                         </div>
                     </div>
@@ -256,33 +114,30 @@
         <section class="setup">
             <div class="container">
                 <div class="setup-content">
-                    <h2 class="section-title">Setup AI Codegen Workflow</h2>
+                    <h2 class="section-title">Get Started</h2>
                     <div class="setup-grid">
                         <div class="setup-step">
-                            <h3>1. Start the MCP Server</h3>
+                            <h3>1. Install</h3>
                             <div class="code-block">
-                                <code>./cainban mcp</code>
+                                <code>git clone https://github.com/hmain/cainban.git && cd cainban && ./install.sh</code>
                                 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                             </div>
-                            <p>Launches the built-in MCP server on your local machine</p>
                         </div>
                         
                         <div class="setup-step">
-                            <h3>2. Connect Your AI Development Tools</h3>
+                            <h3>2. Initialize</h3>
                             <div class="code-block">
-                                <code>ai-tool mcp add cainban '{"command":"./cainban","args":["mcp"]}'</code>
+                                <code>./cainban init</code>
                                 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                             </div>
-                            <p>Links all AI assistants to unified project management workflow</p>
                         </div>
                         
                         <div class="setup-step">
-                            <h3>3. Begin AI-Enhanced Development</h3>
+                            <h3>3. Add AI (Optional)</h3>
                             <div class="code-block">
-                                <code>"Add a task for user authentication with high priority"</code>
+                                <code>./cainban mcp  # Start MCP server for AI integration</code>
                                 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                             </div>
-                            <p>Transform development conversations into structured, trackable project workflows</p>
                         </div>
                     </div>
                 </div>
@@ -292,14 +147,11 @@
         <section class="cta">
             <div class="container">
                 <div class="cta-content">
-                    <h2>Ready to Transform Your AI Development Workflow?</h2>
-                    <p>Join development teams already using AI-enhanced project management for faster, more organized development cycles.</p>
+                    <h2>Ready to Organize Your Dev Work?</h2>
+                    <p>CLI-first kanban that doesn't get in your way.</p>
                     <div class="cta-actions">
                         <a href="https://github.com/hmain/cainban" target="_blank" class="btn btn-primary btn-large">
-                            Star on GitHub
-                        </a>
-                        <a href="https://github.com/hmain/cainban#ai-integration" target="_blank" class="btn btn-secondary btn-large">
-                            Setup AI Workflow
+                            Get Started
                         </a>
                     </div>
                 </div>
@@ -311,12 +163,11 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-left">
-                    <p>&copy; 2024 Cainban. Open source project.</p>
+                    <p>&copy; 2024 Cainban. Open source.</p>
                 </div>
                 <div class="footer-right">
                     <a href="https://github.com/hmain/cainban" target="_blank">GitHub</a>
                     <a href="https://github.com/hmain/cainban/issues" target="_blank">Issues</a>
-                    <a href="https://github.com/hmain/cainban#contributing" target="_blank">Contributing</a>
                 </div>
             </div>
         </div>
